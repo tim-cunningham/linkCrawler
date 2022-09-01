@@ -39,7 +39,10 @@ try:
         x = sesh.get(cleanLinks, verify=False,
                      headers=headers, timeout=100)
         urllib3.PoolManager(cert_reqs='CERT_NONE')
-        print(cleanLinks, "\n", x, x.reason, "\n")
+        print(cleanLinks, "\n", x,
+              x.reason
+              #x.headers, "\n"
+              )
 
 except InsecureRequestWarning as a:
     errors.append(a)
